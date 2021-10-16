@@ -1,0 +1,42 @@
+{
+  "name": "cajal-take-home",
+  "version": "1.0.0",
+  "description": "Project description.",
+  "main": "./lib/barcodeProcessor.js",
+  "types": "./lib/barcodeProcessor.d.ts",
+  "bin": {
+    "barcode": "lib/index.js"
+  },
+  "dependencies": {
+    "bionode-fastq": "^2.2.0",
+    "commander": "^8.2.0",
+    "compute-hamming": "^1.1.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node14": "^1.0.1",
+    "@types/chai": "^4.2.22",
+    "@types/jest": "^27.0.2",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.10.2",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
+    "chai": "^4.3.4",
+    "eslint": "^7.32.0",
+    "eslint-config-google": "^0.14.0",
+    "mocha": "^9.1.2",
+    "nodemon": "^2.0.13",
+    "path": "^0.12.7",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "dev": "nodemon ./src/index.ts",
+    "start": "tsc && node ./lib/index.js",
+    "build": "tsc && eslint . --ext .ts",
+    "clean": "npx --ignore-existing --quiet rimraf node_modules lib",
+    "test": "mocha -r ts-node/register 'tst/**/*.ts'"
+  },
+  "author": "Morgan Garske",
+  "license": "ISC"
+}
